@@ -57,4 +57,18 @@ func main() {
 	cV9 := fmt.Sprintf("%f", 3.14)
 	pl(cV9, reflect.TypeOf(cV9))
 	*/
+
+	/* conditional operators
+	iAge := 8
+	if (iAge >= 1) && (iAge <= 18) {
+		pl("Important Birthday")
+	} else if (iAge == 21) || (iAge == 50) {
+		pl("Important Birthday")
+	} else if iAge >= 65 {
+		pl("Important Birthday")
+	} else {
+		pl("Not an Important Birthday")
+	}
+	pl("!true =", !true)
+	*/
 }
