@@ -145,4 +145,32 @@ func main() {
 	pl("Sin(90) =", math.Sin(r90))
 	// Cos, Tan, Acos, Asin, Atan, Asinh, Acosh, Atanh, Atan2, Cosh, Sinh, Sincos, Htpot, etc..
 	*/
+
+	/* format
+	// %d : Integer
+	// %c : Character
+	// %f : Float
+	// %t : Boolean
+	// %s : String
+	// %o : Base 8
+	// %x : Base 16
+	// %v : Guess based on data type
+	// %T : Type of supplied value
+
+	fmt.Printf("%s %d %c %f %t %o %x\n",
+		"Stuff", 1, 'A', 3.14, true, 1, 1)
+	var num float64 = 123456789.123456789
+	fmt.Printf("9f: %9f\n", num)
+	fmt.Printf(".9f: %.9f\n", num)
+	fmt.Printf("9.f: %9.f\n", num)
+	fmt.Printf("5f: %5f\n", num)
+	fmt.Printf("5.f: %5.f\n", num)
+	fmt.Printf(".5f :%.5f\n", num)
+	fmt.Printf("2f: %2f\n", num)
+	fmt.Printf("2.f: %2.f\n", num)
+	fmt.Printf(".2f: %.2f\n", num)
+
+	sp1 := fmt.Sprintf("%9.f\n", 3.141592)
+	pl(sp1)
+	*/
 }
