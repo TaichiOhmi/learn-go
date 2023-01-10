@@ -48,6 +48,11 @@ func getArraySum(arr []int) int {
 	return sum
 }
 
+// pointers
+func changeValue(myPtr *int) {
+	*myPtr = 12
+}
+
 func main() {
 	/* userInput
 	pl("Hello Go")
@@ -339,7 +344,7 @@ func main() {
 	pl("sl4[0] :", sl4[0]) // sl4[0] :
 	*/
 
-	/* functions */
+	/* functions
 	// func funcName(parameters) returnType {BODY}
 	sayHello()                       // function
 	pl(getSum(3, 6))                 // function
@@ -349,4 +354,23 @@ func main() {
 	pl(getSum2(1, 2, 3, 4, 5, 6, 7)) // varidic
 	vArr := []int{1, 2, 3, 4, 5, 6, 7}
 	pl("Array Sum :", getArraySum(vArr))
+	*/
+
+	/* pointers */
+	f3 := 5
+	pl("f3 before func :", f3)
+	changeValue(&f3)
+	pl("f3 after func :", f3)
+
+	f4 := 10
+	// pointerは typeには*を前につけ、変数の前に&をつけると取得できる
+	var f4Ptr *int = &f4
+	pl("f4 Adress :", f4Ptr)
+	pl("f4 Value :", *f4Ptr) // pointerに*をつけると値を参照できる。
+	*f4Ptr = 11              // f4Ptrのアドレスの変数の値を11にする。
+	pl("f4 Value :", *f4Ptr)
+
+	pl("f4 before func :", f4)
+	changeValue(&f4)
+	pl("f4 after func :", f4)
 }
