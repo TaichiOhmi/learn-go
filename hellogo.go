@@ -71,4 +71,28 @@ func main() {
 	}
 	pl("!true =", !true)
 	*/
+
+	/* strings
+	sV1 := "A word" // []byte
+	replacer := strings.NewReplacer("A", "Another")
+	sV2 := replacer.Replace(sV1)
+	pl(sV2)
+	pl("Length :", len(sV2))
+	pl("Contains Another :", strings.Contains(sV2, "Another"))
+	pl("o index :", strings.Index(sV2, "o"))
+	pl("Replace :", strings.Replace(sV2, "o", "0", -1))
+	// strings.Replaceは、文字列sのコピーに、重複しない最初のn個のoldをnewで置き換えたものを返す。oldが空の場合、文字列の先頭とUTF-8シーケンスの後にマッチし、 k個のルーン文字列に対して最大k+1個の置換が行われる。n < 0 の場合、置換の回数に制限はない。
+	sV3 := "\nSome Words\n" // \t, \" \\
+	pl(sV3)
+	sV3 = strings.TrimSpace(sV3)
+	// TrimSpace は，文字列 s から Unicode で定義されているように先頭と末尾の空白をすべて取り除いたスライスを返します。
+	pl(sV3)
+	pl("Split :", strings.Split("a-b-c-d", "-"))
+	pl("Lower :", strings.ToLower(sV2))
+	pl("Upper :", strings.ToUpper(sV2))
+	// HasPrefix 第一引数が第二引数の文字列で始まっているかを返す。
+	pl("Prefix :", strings.HasPrefix("tacocat", "taco"))
+	// HasSuffix 第一引数が第二引数の文字列で終わっているかを返す。
+	pl("Suffix :", strings.HasSuffix("tococat", "cat"))
+	*/
 }
