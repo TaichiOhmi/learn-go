@@ -103,4 +103,10 @@ func main() {
 		fmt.Printf("%d : %#U : %c\n", i, runeVal, runeVal)
 	}
 	*/
+
+	/* time
+	now := time.Now()
+	pl(now.Year(), now.Month(), now.Day())
+	pl(now.Hour(), now.Minute(), now.Second())
+	*/
 }
