@@ -6,6 +6,7 @@ import (
 
 var pl = fmt.Println
 
+/*
 // function
 func sayHello() {
 	pl("Hello")
@@ -47,10 +48,26 @@ func getArraySum(arr []int) int {
 	}
 	return sum
 }
+*/
 
 // pointers
 func changeValue(myPtr *int) {
 	*myPtr = 12
+}
+
+func dblArrVals(arr *[4]int) {
+	for x := 0; x < 4; x++ {
+		arr[x] *= 2
+	}
+}
+
+func getAverage(nums ...float64) float64 {
+	var sum float64 = 0.0
+	var NumSize float64 = float64(len(nums))
+	for _, value := range nums {
+		sum += value
+	}
+	return (sum / NumSize)
 }
 
 func main() {
@@ -356,7 +373,7 @@ func main() {
 	pl("Array Sum :", getArraySum(vArr))
 	*/
 
-	/* pointers */
+	/* pointers
 	f3 := 5
 	pl("f3 before func :", f3)
 	changeValue(&f3)
@@ -373,4 +390,12 @@ func main() {
 	pl("f4 before func :", f4)
 	changeValue(&f4)
 	pl("f4 after func :", f4)
+	*/
+
+	/* pass array pointers */
+	pArr := [4]int{1, 2, 3, 4}
+	dblArrVals(&pArr)
+	pl(pArr)
+	iSlice := []float64{11, 13, 17}
+	fmt.Printf("Average : %.3f\n", getAverage(iSlice...))
 }
