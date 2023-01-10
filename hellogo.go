@@ -173,4 +173,14 @@ func main() {
 	sp1 := fmt.Sprintf("%9.f\n", 3.141592)
 	pl(sp1)
 	*/
+
+	/* for
+	for x := 1; x <= 5; x++ {
+		pl(x)
+	}
+	pl("---------")
+	for x := 5; x >= 1; x-- {
+		pl(x)
+	}
+	*/
 }
