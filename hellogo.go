@@ -6,6 +6,48 @@ import (
 
 var pl = fmt.Println
 
+// function
+func sayHello() {
+	pl("Hello")
+}
+
+// function with parameters
+func getSum(x int, y int) int {
+	return x + y
+}
+
+// multiple return function
+func getTwo(x int) (int, int) {
+	return x + 1, x + 2
+}
+
+// function errors
+func getQuotient(x float64, y float64) (ans float64, err error) {
+	if y == 0 {
+		return 0, fmt.Errorf("You can't divide by zero")
+	} else {
+		return x / y, nil
+	}
+}
+
+// varadic(可変長引数) functions
+func getSum2(nums ...int) int {
+	sum := 0
+	for _, num := range nums {
+		sum += num
+	}
+	return sum
+}
+
+// passing arrays
+func getArraySum(arr []int) int {
+	sum := 0
+	for _, val := range arr {
+		sum += val
+	}
+	return sum
+}
+
 func main() {
 	/* userInput
 	pl("Hello Go")
@@ -297,4 +339,14 @@ func main() {
 	pl("sl4[0] :", sl4[0]) // sl4[0] :
 	*/
 
+	/* functions */
+	// func funcName(parameters) returnType {BODY}
+	sayHello()                       // function
+	pl(getSum(3, 6))                 // function
+	pl(getTwo(3))                    // return multiple function
+	pl(getQuotient(5, 0))            // function errors
+	pl(getQuotient(5, 4))            // ..
+	pl(getSum2(1, 2, 3, 4, 5, 6, 7)) // varidic
+	vArr := []int{1, 2, 3, 4, 5, 6, 7}
+	pl("Array Sum :", getArraySum(vArr))
 }
