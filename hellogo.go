@@ -259,4 +259,42 @@ func main() {
 	bStr := string(byteArr[:])
 	pl("I'm a string :", bStr)
 	*/
+
+	/* slices
+	// var name []datatype, make([]type, size)
+	sl1 := make([]string, 6)
+	sl1[0] = "Society"
+	sl1[1] = "of"
+	sl1[2] = "the"
+	sl1[3] = "Simulated"
+	sl1[4] = "Universe"
+	pl("Slice Size: ", len(sl1))
+	for i := 0; i < len(sl1); i++ {
+		pl(sl1[i])
+	}
+	for _, x := range sl1 {
+		pl(x)
+	}
+	sArr := [5]int{1, 2, 3, 4, 5}
+	sl2 := sArr[0:2]
+	pl("1st 3 :", sArr[:3])
+	pl("Last 3 :", sArr[2:])
+	sArr[0] = 10
+	// sl2 は sArrのコピーの一部なので、sArrを変更するとsl2も変更される。
+	pl("sl2 :", sl2)
+	// 同様に、sl2を変更すれば、sArrも変更される。
+	sl2[0] = 1
+	pl("sArr :", sArr)
+
+	// ここでも同様に、コピー先が変更されれば、コピー元も変更される。
+	sl3 := sArr[0:2]
+	sl3 = append(sl3, 12)
+	pl("sl3 :", sl3)
+	pl("sArr :", sArr)
+
+	sl4 := make([]string, 6)
+	pl("sl4 :", sl4)       // sl4 : [     ]
+	pl("sl4[0] :", sl4[0]) // sl4[0] :
+	*/
+
 }
