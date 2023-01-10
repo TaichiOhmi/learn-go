@@ -95,4 +95,12 @@ func main() {
 	// HasSuffix 第一引数が第二引数の文字列で終わっているかを返す。
 	pl("Suffix :", strings.HasSuffix("tococat", "cat"))
 	*/
+
+	/* printf
+	rStr := "abcdefg"
+	pl("Rune Count :", utf8.RuneCountInString(rStr))
+	for i, runeVal := range rStr {
+		fmt.Printf("%d : %#U : %c\n", i, runeVal, runeVal)
+	}
+	*/
 }
