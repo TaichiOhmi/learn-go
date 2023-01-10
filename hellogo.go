@@ -30,4 +30,11 @@ func main() {
 	// v4 = 5.4
 	*/
 
+	/* data types
+	// pl(reflect.TypeOf(25))
+	// pl(reflect.TypeOf(3.14))
+	// pl(reflect.TypeOf(true))
+	// pl(reflect.TypeOf("Hello"))
+	// pl(reflect.TypeOf('🦍'))
+	*/
 }
