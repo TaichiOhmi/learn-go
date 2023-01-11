@@ -6,8 +6,7 @@ import (
 
 var pl = fmt.Println
 
-/*
-// function
+/* function
 func sayHello() {
 	pl("Hello")
 }
@@ -50,8 +49,7 @@ func getArraySum(arr []int) int {
 }
 */
 
-/*
-// pointers
+/* pointers
 func changeValue(myPtr *int) {
 	*myPtr = 12
 }
@@ -125,7 +123,7 @@ func (b business) info() {
 }
 */
 
-/* difined types */
+/* difined types
 type Tsp float64
 type TBs float64
 type ML float64
@@ -138,14 +136,40 @@ func tspToML(tsp Tsp) ML {
 func TBToML(tsp TBs) ML {
 	return ML(tsp * 14.79)
 }
+*/
 
-/* associate method */
+/* associate method
 func (tsp Tsp) ToMLs() ML {
 	return ML(tsp * 4.92)
 }
 
 func (tbs TBs) ToMLs() ML {
 	return ML(tbs * 14.79)
+}
+*/
+
+/* interfaces */
+type Animal interface {
+	AngrySound()
+	HappySound()
+}
+
+type Cat string
+
+func (c Cat) Attack() {
+	pl("cat Attacks its Prey")
+}
+
+func (c Cat) Name() string {
+	return string(c)
+}
+
+func (c Cat) AngrySound() {
+	pl("Cat says Hisssss")
+}
+
+func (c Cat) HappySound() {
+	pl("Cat says Purrrrr")
 }
 
 func main() {
@@ -606,8 +630,18 @@ func main() {
 	fmt.Printf("3 TBs = %.2f mL\n", TBToML(3))
 	*/
 
-	/* associate method */
+	/* associate method
 	tsp1 := Tsp(3)
 	fmt.Printf("%.2f tsp = %.2f ml\n", tsp1, tsp1.ToMLs())
+	*/
 
+	/* interface */
+	var kitty Animal // kitty変数 は Animal型 である
+	// 呼び出し方①
+	kitty = Cat("Kitty") // kitty変数は Animal型 で"Kitty" という名前の猫 だよ
+	kitty.AngrySound()   // kitty 猫として怒ることができる
+	// 呼び出し方②
+	var kitty2 Cat = kitty.(Cat) //
+	kitty2.Attack()
+	pl("Cats Name :", kitty2.Name())
 }
