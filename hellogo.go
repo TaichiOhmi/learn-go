@@ -139,6 +139,15 @@ func TBToML(tsp TBs) ML {
 	return ML(tsp * 14.79)
 }
 
+/* associate method */
+func (tsp Tsp) ToMLs() ML {
+	return ML(tsp * 4.92)
+}
+
+func (tbs TBs) ToMLs() ML {
+	return ML(tbs * 14.79)
+}
+
 func main() {
 	/* userInput
 	   pl("Hello Go")
@@ -586,7 +595,7 @@ func main() {
 	bus1.info()
 	*/
 
-	/* difined types */
+	/* difined types
 	ml1 := ML(Tsp(3) * 4.92)
 	fmt.Printf("3 tsps = %.2f ML\n", ml1)
 	ml2 := ML(TBs(3) * 14.92)
@@ -595,4 +604,10 @@ func main() {
 	pl("2 tsp > 4 tsp =", Tsp(2) > Tsp(4))
 	fmt.Printf("3 tsp = %.2f mL\n", tspToML(3))
 	fmt.Printf("3 TBs = %.2f mL\n", TBToML(3))
+	*/
+
+	/* associate method */
+	tsp1 := Tsp(3)
+	fmt.Printf("%.2f tsp = %.2f ml\n", tsp1, tsp1.ToMLs())
+
 }
