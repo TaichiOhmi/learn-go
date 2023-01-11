@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"sync"
+	"time"
 )
 
 var pl = fmt.Println
@@ -186,6 +188,7 @@ func printTo10() {
 }
 */
 
+/* channels
 func nums1(channel chan int) {
 	channel <- 1
 	channel <- 2
@@ -196,6 +199,30 @@ func nums2(channel chan int) {
 	channel <- 4
 	channel <- 5
 	channel <- 6
+}
+*/
+
+/* Mutex / Lock */
+type Account struct {
+	balance int
+	lock    sync.Mutex
+}
+
+func (a *Account) GetBalance() int {
+	a.lock.Lock()
+	defer a.lock.Unlock()
+	return a.balance
+}
+func (a *Account) Withdraw(v int) {
+	a.lock.Lock()         // lock()
+	defer a.lock.Unlock() // 処理が終わったらunlock()
+	if v > a.balance {
+		pl("Not enough money in account")
+	} else {
+		fmt.Printf("%d withdrawn : Balance : %d\n",
+			v, a.balance)
+		a.balance -= v
+	}
 }
 
 func main() {
@@ -678,6 +705,7 @@ func main() {
 	time.Sleep(2 * time.Second)
 	*/
 
+	/* channels
 	channel1 := make(chan int)
 	channel2 := make(chan int)
 	go nums1(channel1)
@@ -688,4 +716,14 @@ func main() {
 	pl(<-channel2)
 	pl(<-channel2)
 	pl(<-channel2)
+	*/
+
+	/* Mutex / Lock */
+	var acct Account
+	acct.balance = 100
+	pl("Balance :", acct.GetBalance())
+	for i := 0; i < 12; i++ {
+		go acct.Withdraw(10)
+	}
+	time.Sleep(2 * time.Second)
 }
