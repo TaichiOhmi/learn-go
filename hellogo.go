@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sync"
-	"time"
 )
 
 var pl = fmt.Println
@@ -202,7 +200,7 @@ func nums2(channel chan int) {
 }
 */
 
-/* Mutex / Lock */
+/* Mutex / Lock
 type Account struct {
 	balance int
 	lock    sync.Mutex
@@ -224,6 +222,7 @@ func (a *Account) Withdraw(v int) {
 		a.balance -= v
 	}
 }
+*/
 
 func main() {
 	/* userInput
@@ -718,7 +717,7 @@ func main() {
 	pl(<-channel2)
 	*/
 
-	/* Mutex / Lock */
+	/* Mutex / Lock
 	var acct Account
 	acct.balance = 100
 	pl("Balance :", acct.GetBalance())
@@ -726,4 +725,16 @@ func main() {
 		go acct.Withdraw(10)
 	}
 	time.Sleep(2 * time.Second)
+	*/
+
+	/* closures */
+	intSum := func(x, y int) int { return x + y }
+	pl("5 + 4 =", intSum(5, 4))
+
+	samp1 := 1
+	changeVar := func() {
+		samp1 += 1
+	}
+	changeVar()
+	pl("samp1 =", samp1)
 }
