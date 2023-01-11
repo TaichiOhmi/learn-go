@@ -224,6 +224,15 @@ func (a *Account) Withdraw(v int) {
 }
 */
 
+/* passing functions */
+func useFunc(f func(int, int) int, x, y int) {
+	pl("Answer :", (f(x, y)))
+}
+
+func sumValues(x, y int) int {
+	return x + y
+}
+
 func main() {
 	/* userInput
 	   pl("Hello Go")
@@ -727,7 +736,7 @@ func main() {
 	time.Sleep(2 * time.Second)
 	*/
 
-	/* closures */
+	/* closures
 	intSum := func(x, y int) int { return x + y }
 	pl("5 + 4 =", intSum(5, 4))
 
@@ -737,4 +746,8 @@ func main() {
 	}
 	changeVar()
 	pl("samp1 =", samp1)
+	*/
+
+	/* passing functions */
+	useFunc(sumValues, 5, 8)
 }
