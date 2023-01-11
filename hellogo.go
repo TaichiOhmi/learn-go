@@ -224,13 +224,22 @@ func (a *Account) Withdraw(v int) {
 }
 */
 
-/* passing functions */
+/* passing functions
 func useFunc(f func(int, int) int, x, y int) {
 	pl("Answer :", (f(x, y)))
 }
 
 func sumValues(x, y int) int {
 	return x + y
+}
+*/
+
+/* recursion */
+func factorial(num int) int {
+	if num == 0 {
+		return 1
+	}
+	return num * factorial(num-1)
 }
 
 func main() {
@@ -748,6 +757,14 @@ func main() {
 	pl("samp1 =", samp1)
 	*/
 
-	/* passing functions */
+	/* passing functions
 	useFunc(sumValues, 5, 8)
+	*/
+
+	/* factorial */
+	pl("Factorial 4 =", factorial(4))
+	// 4 * 3(4-1) * 2(3-1)
+	// 1st : result = 4 * factorial(3) = 4 * 6 = 24
+	// 2nd : result = 3 * factorial(2) = 3 * 2 = 6
+	// 3rd : result = 2 * factorial(1) = 2 * 1 = 2
 }
