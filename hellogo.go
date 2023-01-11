@@ -83,7 +83,7 @@ func getSumGen[T MyConstraint](x T, y T) T {
 }
 */
 
-/* structs */
+/* structs
 type customer struct {
 	name    string
 	address string
@@ -104,6 +104,24 @@ func addNewCustomer(c *customer, address string) {
 
 func (r rectangle) Area() float64 {
 	return r.length * r.height
+}
+*/
+
+/* composition */
+type contact struct {
+	fName string
+	lName string
+	phone string
+}
+
+type business struct {
+	name    string
+	address string
+	contact
+}
+
+func (b business) info() {
+	fmt.Printf("Contact at %s is %s %s\n", b.name, b.contact.fName, b.contact.lName)
 }
 
 func main() {
@@ -529,7 +547,7 @@ func main() {
 	pl("5.5 + 4.3 =", getSumGen(5.5, 4.3))
 	*/
 
-	/* structs */
+	/* structs
 	var tS customer
 	tS.name = "Tom Smith"
 	tS.address = "5 main street"
@@ -545,4 +563,10 @@ func main() {
 
 	rect1 := rectangle{10.0, 15.0}
 	pl("Rect Area :", rect1.Area())
+	*/
+
+	/* composition */
+	con1 := contact{"James", "Wang", "555-1212"}
+	bus1 := business{"ABC Plumbing", "234 North St", con1}
+	bus1.info()
 }
