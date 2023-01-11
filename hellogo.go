@@ -72,7 +72,7 @@ func getAverage(nums ...float64) float64 {
 }
 */
 
-/* generics and constraints */
+/* generics and constraints
 // pkg.go.dev/golang.org/x/exp/constraints
 type MyConstraint interface {
 	int | float64
@@ -80,6 +80,30 @@ type MyConstraint interface {
 
 func getSumGen[T MyConstraint](x T, y T) T {
 	return x + y
+}
+*/
+
+/* structs */
+type customer struct {
+	name    string
+	address string
+	bal     float64
+}
+
+type rectangle struct {
+	length, height float64
+}
+
+func getCustmerInfo(c customer) {
+	fmt.Printf("%s owes us %.2f\n", c.name, c.bal)
+}
+
+func addNewCustomer(c *customer, address string) {
+	c.address = address
+}
+
+func (r rectangle) Area() float64 {
+	return r.length * r.height
 }
 
 func main() {
@@ -500,8 +524,25 @@ func main() {
 	pl(heroes)
 	*/
 
-	/* generics and constraints */
+	/* generics and constraints
 	pl("5 + 4 =", getSumGen(5, 4))
 	pl("5.5 + 4.3 =", getSumGen(5.5, 4.3))
+	*/
 
+	/* structs */
+	var tS customer
+	tS.name = "Tom Smith"
+	tS.address = "5 main street"
+	tS.bal = 234.5678
+	getCustmerInfo(tS)
+	pl("Address :", tS.address)
+
+	addNewCustomer(&tS, "123 South st")
+	pl("Address :", tS.address)
+
+	sS := customer{"Sally Smith", "123 Main", 0.53}
+	pl("Name :", sS.name)
+
+	rect1 := rectangle{10.0, 15.0}
+	pl("Rect Area :", rect1.Area())
 }
