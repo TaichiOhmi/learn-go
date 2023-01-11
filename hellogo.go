@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"regexp"
 )
 
 var pl = fmt.Println
@@ -772,7 +770,7 @@ func main() {
 	// 3rd : result = 2 * factorial(1) = 2 * 1 = 2
 	*/
 
-	/* regular expressions */
+	/* regular expressions
 	reStr := "The ape was at the apex"
 	// match, _ := regexp.MatchString("(ape[^ ]?", reStr)
 	match, err := regexp.MatchString("(ape[^ ]?)", reStr)
@@ -793,4 +791,5 @@ func main() {
 	pl("1st 2 String :", r.FindAllString(reStr2, 2))
 	pl("All Submatch Index :", r.FindAllStringSubmatchIndex(reStr2, -1))
 	pl(r.ReplaceAllString(reStr2, "Dog"))
+	*/
 }
