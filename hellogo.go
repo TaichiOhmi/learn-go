@@ -72,6 +72,16 @@ func getAverage(nums ...float64) float64 {
 }
 */
 
+/* generics and constraints */
+// pkg.go.dev/golang.org/x/exp/constraints
+type MyConstraint interface {
+	int | float64
+}
+
+func getSumGen[T MyConstraint](x T, y T) T {
+	return x + y
+}
+
 func main() {
 	/* userInput
 	   pl("Hello Go")
@@ -463,7 +473,7 @@ func main() {
 	   }
 	*/
 
-	/* maps */
+	/* maps
 	// var myMap map [keyType]valueType
 	var heroes map[string]string
 	heroes = make(map[string]string)
@@ -488,5 +498,10 @@ func main() {
 	pl(heroes)
 	delete(heroes, "The Flash")
 	pl(heroes)
+	*/
+
+	/* generics and constraints */
+	pl("5 + 4 =", getSumGen(5, 4))
+	pl("5.5 + 4.3 =", getSumGen(5.5, 4.3))
 
 }
