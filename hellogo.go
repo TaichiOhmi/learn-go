@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 var pl = fmt.Println
@@ -148,7 +149,7 @@ func (tbs TBs) ToMLs() ML {
 }
 */
 
-/* interfaces */
+/* interfaces
 type Animal interface {
 	AngrySound()
 	HappySound()
@@ -170,6 +171,18 @@ func (c Cat) AngrySound() {
 
 func (c Cat) HappySound() {
 	pl("Cat says Purrrrr")
+}
+*/
+
+func printTo15() {
+	for i := 1; i <= 15; i++ {
+		pl("Fun 1 :", i)
+	}
+}
+func printTo10() {
+	for i := 1; i <= 10; i++ {
+		pl("Fun 2 :", i)
+	}
 }
 
 func main() {
@@ -635,7 +648,7 @@ func main() {
 	fmt.Printf("%.2f tsp = %.2f ml\n", tsp1, tsp1.ToMLs())
 	*/
 
-	/* interface */
+	/* interface
 	var kitty Animal // kitty変数 は Animal型 である
 	// 呼び出し方①
 	kitty = Cat("Kitty") // kitty変数は Animal型 で"Kitty" という名前の猫 だよ
@@ -644,4 +657,10 @@ func main() {
 	var kitty2 Cat = kitty.(Cat) //
 	kitty2.Attack()
 	pl("Cats Name :", kitty2.Name())
+	*/
+
+	/* concurrency / goRoutines */
+	go printTo15()
+	go printTo10()
+	time.Sleep(2 * time.Second)
 }
