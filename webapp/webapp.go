@@ -94,5 +94,7 @@ func main() {
 	http.HandleFunc("/", newHandler)
 	http.HandleFunc("/create", createHandler)
 	err := http.ListenAndServe("localhost:8080", nil)
-	log.Fatal(err)
+	if err != nil {
+		log.Fatal("ListenAndServe: ", err)
+	}
 }
